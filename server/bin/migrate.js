@@ -1,4 +1,5 @@
 // Load environment variables from .env file
+
 require("dotenv").config();
 
 const fs = require("node:fs");
