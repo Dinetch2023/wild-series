@@ -2,6 +2,9 @@
 
 require("dotenv").config();
 
+// Update the database schema
+const mysql = require("mysql2/promise");
+
 const fs = require("node:fs");
 const path = require("node:path");
 
@@ -10,9 +13,6 @@ const schema = path.join(__dirname, "..", "database", "schema.sql");
 
 // Get database connection details from .env file
 const { DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME } = process.env;
-
-// Update the database schema
-const mysql = require("mysql2/promise");
 
 const migrate = async () => {
   try {
